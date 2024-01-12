@@ -1,8 +1,13 @@
 # coding:utf-8
 
 import gzip
+from html import escape
+from html import unescape
 import os
+import re
 from tempfile import TemporaryDirectory
+from xml.etree import ElementTree
+from xml.etree.ElementTree import Element
 
 from doclifter import main as doclifter
 
@@ -31,3 +36,9 @@ class man:
                 fman.write(man.read(page))
             doclifter([path])
             return open(f"{path}.xml").read()
+
+    @classmethod
+    def read_xml_tree(cls, page: str) -> Element:
+        ctx = man.read_xml(page)
+        xml = re.sub("\\&\\w+\\;", lambda x: escape(unescape(x.group(0))), ctx)
+        return ElementTree.fromstring(xml)
