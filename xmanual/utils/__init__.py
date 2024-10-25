@@ -1,12 +1,12 @@
 # coding:utf-8
 
-from .attribute import __author__
-from .attribute import __author_email__
-from .attribute import __description__
-from .attribute import __name__
-from .attribute import __url_bugs__
-from .attribute import __url_code__
-from .attribute import __url_docs__
-from .attribute import __url_home__
-from .attribute import __version__
-from .man import man
+from .attribute import __author__  # noqa:F401
+from .attribute import __author_email__  # noqa:F401
+from .attribute import __description__  # noqa:F401
+from .attribute import __project__  # noqa:F401
+from .attribute import __urlbugs__  # noqa:F401
+from .attribute import __urlcode__  # noqa:F401
+from .attribute import __urldocs__  # noqa:F401
+from .attribute import __urlhome__  # noqa:F401
+from .attribute import __version__  # noqa:F401
+from .man import man  # noqa:F401
